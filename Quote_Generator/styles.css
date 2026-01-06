@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+body
+{
+    background:#bbc6fa;
+
+}
+.qoute-Box
+{
+    background:#fff;
+    width:700px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    
+
+}
