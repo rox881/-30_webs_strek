@@ -1,17 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quote_Geneartor</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
 </head>
+
 <body>
     <div class="quote-Box">
-        <h1>Quote Of the Day</h1>
-        <blockquote>Loading...</blockquote>
-        <span>Loading....</span>
+        <h2>Quote Of the Day</h2>
+        <blockquote id="quote">Loading...</blockquote>
+        <span id="author">Loading....</span>
+        <button onclick=" getQuote(api_url);">New Quote</button>
+        <button onclick="tweet()"><img src="image.png">Tweet</button>
     </div>
-    
+    <script>
+        const quote =document.getElementById("quote");
+        const author=document.getElementById("author");
+        api_url="https://dummyjson.com/quotes/random";
+        async function getQuote(url) {
+            const response = await fetch(url);
+            const data = await response.json();
+            console.log(data);
+            quote.innerHTML=data.quote;
+            author.innerHTML=data.author;
+            
+        }
+        
+        function tweet()
+        {
+            window.open("https://twitter.com/intent/tweet?text="+quote.innerHTML,"Tweet-window","height:400","width:600");
+        }
+        </script>
+
 </body>
+
+
+
 </html>
