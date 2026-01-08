@@ -3,19 +3,105 @@
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     box-sizing: border-box;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
-body
-{
-    background:#bbc6fa;
+
+body {
+    background: #bbc6fa;
 
 }
-.qoute-Box
-{
-    background:#fff;
-    width:700px;
-    position:absolute;
-    top:50%;
-    left:50%;
-    
 
+.quote-Box {
+    background: #fff;
+    width: 700px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.15);
+
+}
+
+.quote-Box h2 {
+    font-size: 40px;
+    margin-bottom: 32px;
+    position: relative;
+}
+
+.quote-Box h2::after {
+    content: '';
+    width: 75px;
+    height: 3px;
+    border-radius: 3px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgb(86, 168, 255);
+}
+
+.quote-Box blockquote {
+    font-size: 26px;
+    min-height: 110px;
+}
+
+.quote-Box blockquote::before,
+.quote-Box blockquote::after {
+    content: '"';
+}
+
+.quote-Box span {
+    display: block;
+    margin-top: 10px;
+    float: right;
+    position: relative;
+}
+
+.quote-Box span::before {
+    content: "";
+    height: 2px;
+    width: 20px;
+    background: rgb(24, 129, 229);
+    position: absolute;
+    top: 50%;
+    left: -30px;
+}
+
+.quote-Box div {
+    display: flex;
+    width: 100%;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.quote-Box button {
+    background: rgb(23 124 229);
+    color: #fff;
+    border: 1px solid black;
+    border-radius: 25px;
+    margin: 5px;
+    font-weight: 500;
+    height: 50px;
+    width: 150px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+}
+
+.quote-Box button img {
+    width: 20px;
+
+    margin-right: 10px;
+
+}
+.quote-Box button:nth-of-type(2)
+{
+    background: transparent;
+    color: #333;
 }
