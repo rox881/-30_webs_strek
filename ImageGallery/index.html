@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery In javascript</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+
+    <div class="gallery-wrap">
+        <img src="h-scroll-img\images\next.png" id="nextBtn">
+        <div class="gallery" id="gallery">
+            <div>
+                <span><img src="h-scroll-img\images\image-1.png"></span>
+                <span><img src="h-scroll-img\images\image-2.png"></span>
+                <span><img src="h-scroll-img\images\image-3.png"></span>
+            </div>
+            <div>
+                <span><img src="h-scroll-img\images\image-4.png"></span>
+                <span><img src="h-scroll-img\images\image-5.png"></span>
+                <span><img src="h-scroll-img\images\image-6.png"></span>
+            </div>
+        </div>
+        <img src="h-scroll-img\images\back.png" id="backBtn">
+    </div>
+    <script>
+
+        let scrollcontainer = document.getElementById("gallery");
+        let backBtn = document.getElementById("backBtn");
+        let nextBtn = document.getElementById("nextBtn")
+
+        scrollcontainer.addEventListener("wheel", (evt) => {
+            evt.preventDefault();
+            scrollcontainer.style.scrollBehavior = "auto";
+            scrollcontainer.scrollLeft += evt.deltaY;
+        })
+
+        backBtn.addEventListener("click", (event) => {
+            scrollcontainer.style.scrollBehavior = "smooth";
+            scrollcontainer.scrollLeft += 900;
+        })
+
+        nextBtn.addEventListener("click", (event) => {
+            scrollcontainer.style.scrollBehavior = "smooth";
+            scrollcontainer.scrollLeft -= 900;
+        })
+
+    </script>
+
+</body>
+
+</html>
